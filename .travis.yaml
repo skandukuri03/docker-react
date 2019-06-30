@@ -1,7 +1,7 @@
 # when ever we use docker we need super user permissions
 #sudo: required 
 services:
-  - echo "BEFORE services"
+  - echo "In the  services"
   - docker        #We are telling Travis that we need docker CLI pre-installed.
 
 # This section will have a series of different commands before our tests has ran
