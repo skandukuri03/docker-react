@@ -8,6 +8,7 @@ services:
 before_install:     
   - echo "BEFORE INSTALL START"
   - gem install bundler
+  - bundle install
   - docker build -t skandukuri03/docker-react -f Dockerfile.dev .  #We have to build docker image before the build
 
 #the below section tell travis how to run the test - a series of commands to test
