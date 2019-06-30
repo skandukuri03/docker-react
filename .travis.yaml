@@ -3,8 +3,6 @@ services:
   - docker
 
 before_install:     
-  - echo "BEFORE INSTALL START"
-  - gem update
   - docker build -t skandukuri03/docker-react -f Dockerfile.dev .  
 
 script:
