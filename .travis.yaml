@@ -1,16 +1,10 @@
-# when ever we use docker we need super user permissions
-#sudo: required 
+sudo: required 
 services:
-  - echo "In the  services"
-  - docker        #We are telling Travis that we need docker CLI pre-installed.
+  - docker
 
-# This section will have a series of different commands before our tests has ran
 before_install:     
   - echo "BEFORE INSTALL START"
-  - gem install bundler
-  - bundle install
-  - docker build -t skandukuri03/docker-react -f Dockerfile.dev .  #We have to build docker image before the build
-
-#the below section tell travis how to run the test - a series of commands to test
+  - docker build -t skandukuri03/docker-react -f Dockerfile.dev .  
+  
 script:
-  - docker run skandukuri03/docker-react npm run test -- --coverage #-- --coverage will exit the test after done...
+  - docker run skandukuri03/docker-react npm run test -- --coverage
